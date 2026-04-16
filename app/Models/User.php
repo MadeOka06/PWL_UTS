@@ -32,4 +32,17 @@ class User extends Authenticatable
     public function level(){
         return $this->belongsTo(level::class, 'level_id','level_id');
     }
+    protected $fillable = [
+        'user_id',
+        'level_id',
+        'username',
+        'email',
+        'nama',
+        'password'
+    ];
+    protected $primaryKey = 'user_id';
+    public function getNameAttribute()
+{
+    return $this->nama;
+}
 }
