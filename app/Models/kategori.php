@@ -12,4 +12,7 @@ class kategori extends Model
         "kategori_kode",
         "kategori_nama"
     ];
+    public function barangs(){
+        $this->hasMany(Barang::class. 'kategori_id','kategori_id');
+    }
 }
