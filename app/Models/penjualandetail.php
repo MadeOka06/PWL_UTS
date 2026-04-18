@@ -21,4 +21,5 @@ class penjualandetail extends Model
     public function barang(){
         return $this->belongsTo(barang::class,'barang_id','barang_id');
     }
+    
 }
