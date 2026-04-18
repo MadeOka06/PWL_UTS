@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Users\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,8 +13,10 @@ class UserForm
         return $schema
             ->components([
                 //
-                TextInput::make('user_id'),
-                TextInput::make('level_id')
+                Select::make('level_id')
+                ->relationship('level' , 'level_id')
+                ->searchable()
+                ->preload()
                 ->required(),
                 TextInput::make('username')
                 ->required()

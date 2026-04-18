@@ -13,7 +13,7 @@ class level extends Model
         "level_kode",
         "level_nama"
     ];
-    public function users(){
+    public function user(){
         return $this->hasMany(User::class,'level_id','level_id');
     }
 }

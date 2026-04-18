@@ -17,7 +17,8 @@ class BarangsTable
             ->columns([
                 //
                 TextColumn::make('barang_id'),
-                TextColumn::make('kategori_id'),
+                TextColumn::make('kategori.kategori_nama')
+                ->label('Nama Kategori'),
                 TextColumn::make('barang_kode'),
                 TextColumn::make('barang_nama'),
                 TextColumn::make('harga_beli'),

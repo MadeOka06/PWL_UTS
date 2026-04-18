@@ -18,7 +18,7 @@ class SuppliersTable
                 TextColumn::make('supplier_id'),
                 TextColumn::make('supplier_kode'),
                 TextColumn::make('supplier_nama'),
-                TextColumn::make('supplier_alaamt')
+                TextColumn::make('supplier_alamat')
             ])
             ->filters([
                 //

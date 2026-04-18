@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Penjualandetails\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,9 +13,21 @@ class PenjualandetailForm
         return $schema
             ->components([
                 //
-                TextInput::make('Harga')
+                Select::make('penjualan_id')
+                ->label('ID Penjualan')
+                ->relationship('penjualan' , 'penjualan_id')
+                ->searchable()
+                ->preload()
                 ->required(),
-                TextInput::make('Jumlah')
+                Select::make('barang_id')
+                ->label('ID Barang')
+                ->relationship('barang' , 'barang_id')
+                ->searchable()
+                ->preload()
+                ->required(),
+                TextInput::make('harga')
+                ->required(),
+                TextInput::make('jumlah')
                 ->required()
             ]);
     }

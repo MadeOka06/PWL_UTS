@@ -15,9 +15,11 @@ class PenjualandetailsTable
         return $table
             ->columns([
                 //
-                TextColumn::make('Detail_id'),
-                TextColumn::make('penjualan_id'),
-                TextColumn::make('barang_id'),
+                TextColumn::make('detail_id'),
+                TextColumn::make('penjualan.penjualan_kode')
+                ->label('Penjualan Kode'),
+                TextColumn::make('barang.barang_nama')
+                ->label('Nama Barang'),
                 TextColumn::make('harga'),
                 TextColumn::make('jumlah')
             ])

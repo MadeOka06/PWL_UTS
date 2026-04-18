@@ -13,6 +13,8 @@ class supplier extends Model
         'supplier_alamat'
     ];
     protected $primaryKey = 'supplier_id';
-    
+    public function stok(){
+        return $this->hasMany(stok::class,'stok_id','stok_id');
+    }
     
 }

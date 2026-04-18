@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Barangs\Schemas;
 
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
@@ -12,6 +13,11 @@ class BarangForm
         return $schema
             ->components([
                 //
+                Select::make('kategori_id')
+                ->relationship('kategori' , 'kategori_id')
+                ->searchable()
+                ->preload()
+                ->required(),
                 TextInput::make('barang_kode')
                 ->required()
                 ->maxLength(10),

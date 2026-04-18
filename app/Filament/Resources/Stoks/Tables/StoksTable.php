@@ -16,9 +16,12 @@ class StoksTable
             ->columns([
                 //
                 TextColumn::make('stok_id'),
-                TextColumn::make('supplier_id'),
-                TextColumn::make('barang_id'),
-                TextColumn::make('user_id'),
+                TextColumn::make('supplier.supplier_nama')
+                ->label('Nama Supplier'),
+                TextColumn::make('barang.barang_nama')
+                ->label('Nama Barang'),
+                TextColumn::make('user.nama')
+                ->label('Nama User'),
                 TextColumn::make('stok_tanggal'),
                 TextColumn::make('stok_jumlah')
             ])

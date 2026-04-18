@@ -8,16 +8,17 @@ class penjualandetail extends Model
 {
     //
     protected $fillable = [
-        'barang_id',
         'penjualan_id',
+        'barang_id',
+        'detail_id',
         'harga',
         'jumlah'
     ];
-    protected $primaryKey = 'penjualan_id';
+    protected $primaryKey = 'detail_id';
     public function penjualan(){
-        return $this->hasMany(penjualan::class,'penjualan_id','penjualan_id');
+        return $this->belongsTo(penjualan::class,'penjualan_id','penjualan_id');
     }
     public function barang(){
-        return $this->hasMany(barang::class,'barang_id','barang_id');
+        return $this->belongsTo(barang::class,'barang_id','barang_id');
     }
 }

@@ -16,10 +16,11 @@ class PenjualansTable
             ->columns([
                 //
                 TextColumn::make('penjualan_id'),
-                TextColumn::make('user_id'),
                 TextColumn::make('penjualan_kode'),
                 TextColumn::make('penjualan_tanggal'),
-                TextColumn::make('pembeli')
+                TextColumn::make('pembeli'),
+                TextColumn::make('user_id'),
+                TextColumn::make('user.name'),
             ])
             ->filters([
                 //
